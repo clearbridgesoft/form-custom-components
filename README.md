@@ -25,5 +25,13 @@ npm pack
 npm install -save https://github.com/clearbridgesoft/form-custom-components/releases/download/v0.0.0/form-custom-components-0.0.0.tgz
 ```
 
+** Example
+```
+import Form from 'react-jsonschema-form';
+import custom from 'form-custom-compoments';
+...
+return (<Form schema={{type:'string'}} uiSchema={{'ui:widget':'wysiwyg'}} widgets={custom.widgets} fields={custom.fields} />);
+```
+
 * Limitations
   - the dev-server app is incomplete
