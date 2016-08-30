@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Form from 'react-jsonschema-form';
 import CustomComponent from '../src';
+import './Draft.css';
 
 class App extends Component {
   constructor(props) {
