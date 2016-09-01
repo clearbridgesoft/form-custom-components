@@ -27,22 +27,22 @@ class PaymentStatus extends React.Component {
     };
 
     this.onBalanceChange = (balance) => {
-      this.setState({balance});
+      this.setState({ balance });
     };
     this.onBalanceBlur = (balance) => {
       balance = this.parseFloatBussinesValues(balance);
-      this.setState({balance}, () => this.props.onChange(this.prepareExternalState(this.state)));
+      this.setState({ balance }, () => this.props.onChange(this.prepareExternalState(this.state)));
     };
     this.onTotalChange = (total) => {
-      this.setState({total});
+      this.setState({ total });
     };
     this.onTotalBlur = (total) => {
       total = this.parseFloatBussinesValues(total);
-      this.setState({total}, () => this.props.onChange(this.prepareExternalState(this.state)));
+      this.setState({ total }, () => this.props.onChange(this.prepareExternalState(this.state)));
 
     };
     this.onTogglePurchase = (purchase) => {
-      this.setState({purchase}, () => this.props.onChange(this.prepareExternalState(this.state)));
+      this.setState({ purchase }, () => this.props.onChange(this.prepareExternalState(this.state)));
     };
 
     this.onTogglePurchase.bind(this);
@@ -122,24 +122,24 @@ class PaymentStatus extends React.Component {
         <PurchaseField
           purchase={purchase}
           onToggle={this.onTogglePurchase}
-        />
+          />
         <div style={totalBalanceStyles}>
           <TotalField
             total={total}
             hide={hideTotal}
             onChange={this.onTotalChange}
             onBlur={this.onTotalBlur}
-          />
+            />
           <BalanceField
             balance={balance}
             hide={hideBalance}
             onChange={this.onBalanceChange}
             onBlur={this.onBalanceBlur}
-          />
+            />
         </div>
         <PaymentStatusField
           paymentStatus={paymentStatus}
-        />
+          />
       </div>
     );
   }
@@ -157,7 +157,7 @@ class PurchaseField extends React.Component {
     return (
       <div>
         <span className="PaymentStatus-purchaseOrder--field"><input type="checkbox" checked={this.props.purchase} onChange={this.onToggle} /></span>
-        <span className="PaymentStatus-purchaseOrder--label control-label" style={{marginLeft: '5px', fontWeight: 'bold'}}>Purchase order</span>
+        <span className="PaymentStatus-purchaseOrder--label control-label" style={{ marginLeft: '5px', fontWeight: 'bold' }}>Purchase order</span>
       </div>
     );
   }
@@ -179,7 +179,7 @@ class BalanceField extends React.Component {
       return null;
     }
     return (
-      <div  style={{flex: 1, marginLeft: '5px'}}>
+      <div  style={{ flex: 1, marginLeft: '5px' }}>
         <span className="PaymentStatus-balance--label control-label">Balance</span>
         <div className="PaymentStatus-balance--field"><input type="text" className="form-control" value={this.props.balance} onChange={this.onChange} onBlur={this.onBlur} /></div>
       </div>
@@ -203,7 +203,7 @@ class TotalField extends React.Component {
       return null;
     }
     return (
-      <div style={{flex: 1}}>
+      <div style={{ flex: 1 }}>
         <span className="PaymentStatus-total--label control-label">Total</span>
         <div className="PaymentStatus-total--field"><input type="text" className="form-control" value={this.props.total} onChange={this.onChange} onBlur={this.onBlur} /></div>
       </div>
@@ -214,7 +214,7 @@ class TotalField extends React.Component {
 class PaymentStatusField extends React.Component {
   render() {
     return (
-      <div style={{marginTop: '5px'}}>
+      <div style={{ marginTop: '5px' }}>
         <span className="PaymentStatus-paymentStatus--label control-label">Payment Status</span>
         <div className="PaymentStatus-paymentStatus--field"><input type="text" className="form-control" disabled="true" value={this.props.paymentStatus} /></div>
       </div>

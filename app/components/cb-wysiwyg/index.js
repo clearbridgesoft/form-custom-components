@@ -7,6 +7,9 @@ import {
   Immutable
 } from 'draft-js';
 
+import styles from './style.css';
+console.log('styles ');console.log(styles['RichEditor-root']);
+
 class Wysiwyg extends React.Component {
   constructor(props) {
     super(props);
@@ -69,7 +72,7 @@ class Wysiwyg extends React.Component {
     }
 
     return (
-      <div className="RichEditor-root">
+      <div className="RichEditor-root" >
         <BlockStyleControls
           editorState={editorState}
           onToggle={this.toggleBlockType}
@@ -107,8 +110,8 @@ const styleMap = {
 
 function getBlockStyle(block) {
   switch (block.getType()) {
-  case 'blockquote': return 'RichEditor-blockquote';
-  default: return null;
+    case 'blockquote': return 'RichEditor-blockquote';
+    default: return null;
   }
 }
 

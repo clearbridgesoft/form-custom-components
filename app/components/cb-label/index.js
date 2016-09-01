@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 export default class Label extends React.Component {
@@ -6,7 +7,8 @@ export default class Label extends React.Component {
   }
 
   render() {
-    let { title } = this.props.schema;
+    let { title } = this.props.schema ? this.props.schema : { title: "" };
+
     return (
       <h2 className="label-array">
         { title }
